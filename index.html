@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>창원 EV 스마트 충전소</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>⚡ 창원 EV 스마트 충전소</h1>
+    <p>전기차 충전소 추천 및 수요 분산 시스템</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>내 차량 정보</h2>
+      <label>현재 배터리 잔량 (%)</label>
+      <input id="soc" type="number" min="0" max="99" value="30">
+
+      <label>배터리 용량 (kWh)</label>
+      <input id="capacity" type="number" min="1" value="60">
+
+      <label>목표 충전량 (%)</label>
+      <input id="target" type="number" min="1" max="100" value="80">
+
+      <label>차량 최대 충전 출력 (kW)</label>
+      <input id="vehiclePower" type="number" min="1" value="100">
+
+      <label>체류 가능 시간 (분)</label>
+      <input id="stay" type="number" min="1" value="90">
+
+      <button id="recommendBtn">충전소 추천받기</button>
+    </section>
+
+    <section class="panel">
+      <h2>추천 결과</h2>
+      <div id="results">차량 정보를 입력하고 추천 버튼을 눌러주세요.</div>
+    </section>
+
+    <section class="panel">
+      <h2>수요 분산 시뮬레이션</h2>
+      <button id="simulationBtn">시뮬레이션 실행</button>
+      <div id="simulation"></div>
+    </section>
+  </main>
+
+  <footer>그루트 팀 | 스마트전기과 프로젝트</footer>
+
+  <script src="data.js"></script>
+  <script src="calculator.js"></script>
+  <script src="recommender.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
